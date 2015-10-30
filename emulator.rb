@@ -47,7 +47,7 @@ begin
 			else
 				puts "dev bootcomplete"
 				puts `adb -s #{emulator_name} shell "getprop dev.bootcomplete"`
-				puts `adb -s #{emulator_name} shell "getprop "dev.bootcompleted"`
+				puts `adb -s #{emulator_name} shell "getprop dev.bootcompleted"`
 				puts "sys boot_complete"
 				puts `adb -s #{emulator_name} shell "getprop sys.boot_completed"`
 				puts `adb -s #{emulator_name} shell "getprop sys_bootcomplete"`
