@@ -39,7 +39,7 @@ begin
 	Timeout::timeout(120) do
 		while emulator_booted == false
 			sleep 1
-			puts `adb devices -l`
+			`adb devices -l`
 			if `adb -s #{emulator_name} shell "getprop dev.bootcomplete"`.strip.eql?("1") &&
 				`adb -s #{emulator_name} shell "getprop sys.boot_completed"`.strip.eql?("1") &&
 				`adb -s #{emulator_name} shell "getprop init.svc.bootanim"`.strip.eql?("stopped")
@@ -57,7 +57,7 @@ begin
 				puts `adb -s #{emulator_name} shell "getprop init.svc.bootanim"`
 				puts `adb -s #{emulator_name} shell "getprop init.svc.bootanim"`
 				`adb kill-server`
-				`adb start-server`
+				`adb devices -l`
 				puts "----------------"
 				puts ""
 			end
