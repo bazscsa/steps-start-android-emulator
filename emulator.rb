@@ -7,7 +7,7 @@ emulator_booted = false
 
 # Start the emulator
 puts "start emulator with uuid #{emulator_uuid}"
-pid = spawn("emulator -avd #{ENV['emulator_name']} -no-skin -noaudio -no-window -prop emu.uuid=#{emulator_uuid}", [:out, :err]=>["emulator.log", "w"])
+pid = spawn("emulator -avd #{ENV['emulator_name']} -no-skin -noaudio -force-32bit -no-window -prop emu.uuid=#{emulator_uuid}", [:out, :err]=>["emulator.log", "w"])
 Process.detach(pid)
 
 puts ""
