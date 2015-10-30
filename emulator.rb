@@ -36,7 +36,7 @@ puts ""
 puts "Waiting for emulator to boot"
 # Wait till device is booted
 begin
-	Timeout::timeout(1200) do
+	Timeout::timeout(120) do
 		while emulator_booted == false
 			sleep 1
 			adb devices -l
