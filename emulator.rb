@@ -44,6 +44,9 @@ begin
 				`adb -s #{emulator_name} shell "getprop sys.boot_completed"`.strip.eql?("1") &&
 				`adb -s #{emulator_name} shell "getprop init.svc.bootanim"`.strip.eql?("stopped")
 				emulator_booted = true
+			else
+				`adb kill-server`
+				`adb start-server`
 			end
 		end
 	end
