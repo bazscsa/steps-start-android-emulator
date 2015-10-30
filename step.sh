@@ -10,6 +10,4 @@ if [ -z "${emulator_name}" ]; then
 	exit 1
 fi
 
-echo "${emulator_name}"
-
 ruby ${THIS_SCRIPTDIR}/emulator.rb
